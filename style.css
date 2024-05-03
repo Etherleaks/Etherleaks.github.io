@@ -127,6 +127,7 @@ body{
 }
 .social-icons a.twitter i{
   color: #1DA1F2;
+  src: url('etherleaks.github.io/etherleakspfp.png');
 }
 .social-icons a.insta i{
   color: #E1306C;
