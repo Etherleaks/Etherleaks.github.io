@@ -1,9 +1,8 @@
 <div align="center">
-
 ## Socials Neumorphic Card Template
-</div>
 
 # Features
+</div>
 
 - Neumorphic
 - Wide Rang Browser Support
