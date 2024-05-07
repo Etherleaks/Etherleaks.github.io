@@ -1,7 +1,9 @@
 <div align="center">
+
 ## Socials Neumorphic Card Template
 
 # Features
+
 </div>
 
 - Neumorphic
