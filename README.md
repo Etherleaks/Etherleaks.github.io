@@ -1,6 +1,5 @@
 <div align="center">
-# Socials Card
 
-## Template
+## Socials Neumorphic Card Template
 
 Made With HTML, CSS, JS
