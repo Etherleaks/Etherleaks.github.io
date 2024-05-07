@@ -1,6 +1,6 @@
 <div align="center">
-#Socials Card
+# Socials Card
 
-##Template
+## Template
 
 Made With HTML, CSS, JS
