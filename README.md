@@ -5,6 +5,6 @@
 # Features
 
 </div>
-<dive align="center">
+<div align="center">
 <p> Neumorphic <br /> Wide Rang Browser Support <br /> Easily Set <br /> Understandable <br /> Code Made With HTML, CSS, JS <p>
 </div>
