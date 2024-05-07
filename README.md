@@ -6,5 +6,5 @@
 
 </div>
 <dive align="center">
-<h1>Neumorphic /n Wide Rang Browser Support/n Easily Set/n Understandable Code/n Made With HTML, CSS, JS</h1>
+Neumorphic /n Wide Rang Browser Support/n Easily Set/n Understandable /n Code Made With HTML, CSS, JS
 </div>
