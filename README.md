@@ -5,8 +5,9 @@
 # Features
 
 </div>
-
-- Neumorphic
-- Wide Rang Browser Support
-- Easily Set Understandable Code
-- Made With HTML, CSS, JS
+<dive align="center">
+Neumorphic
+Wide Rang Browser Support
+Easily Set Understandable Code
+Made With HTML, CSS, JS
+</div>
