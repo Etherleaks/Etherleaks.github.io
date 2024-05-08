@@ -1,6 +1,6 @@
 <div align="center">
 
-# [Socials Neumorphic Card Template](https://google.com)
+# [Socials Neumorphic Card Template](https://etherleaks.github.io)
 
 ## Features
 
