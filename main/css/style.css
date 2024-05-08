@@ -123,7 +123,7 @@ body{
 }
 .social-icons a.gh i{
   color: #4267B2;
-  background-image: url('https://etherleaks.github.io/a-github.png');
+  background-image: url('https://etherleaks.github.io/main/img/a-github.png');
   background-size: cover;
   border-top-left-radius: 50% 50%;
   border-top-right-radius: 50% 50%;
@@ -132,7 +132,7 @@ body{
 }
 .social-icons a.insta i{
   color: #1DA1F2;
-  background-image: url('https://etherleaks.github.io/a-instagram.png');
+  background-image: url('https://etherleaks.github.io/main/img/a-instagram.png');
   background-size: cover;
   border-top-left-radius: 50% 50%;
   border-top-right-radius: 50% 50%;
@@ -141,7 +141,7 @@ body{
 }
 .social-icons a.tt i{
   color: #E1306C;
-  background-image: url('https://etherleaks.github.io/a-tiktok.png');
+  background-image: url('https://etherleaks.github.io/main/img/a-tiktok.png');
   background-size: cover;
   border-top-left-radius: 50% 50%;
   border-top-right-radius: 50% 50%;
@@ -150,7 +150,7 @@ body{
 }
 .social-icons a.x i{
   color: #ff0000;
-  background-image: url('https://etherleaks.github.io/a-x.png');
+  background-image: url('https://etherleaks.github.io/main/img/a-x.png');
   background-size: cover;
   border-top-left-radius: 50% 50%;
   border-top-right-radius: 50% 50%;
