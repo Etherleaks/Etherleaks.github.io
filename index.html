@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>║▌║█║▌│║▌║▌█║║▌</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?	family=Rubik+Glitch+Pop&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -19,14 +19,7 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            background: black;
-        }
-        .wrapper,
-        .wrapper .img-area,
-        .social-icons a,
-        .buttons button {
-            box-shadow: -3px -3px 7px #821111,
-                        3px 3px 5px #3f0a0a;
+            background: #ecf0f3;
         }
         .wrapper {
             position: relative;
@@ -77,11 +70,10 @@
             left: 0;
             z-index: -1;
         }
-        .rubik-glitch-regular {
-          font-family: "Rubik Glitch", system-ui;
-          font-weight: 400;
-          font-style: normal;
-          font-style: italic;
+		.rubik-glitch-pop-regular {
+  			font-family: "Rubik Glitch Pop", system-ui;
+  			font-weight: 400;
+  			font-style: normal;
         }
     </style>
 </head>
@@ -93,7 +85,7 @@
                 <img src="https://Etherleaks.github.io/main/img/a-ethereum.png">
             </div>
         </div>
-        <div class="rubik-glitch-regular"><h1 class="rubik-glitch-regular">EtherLeaks</h1></div>
+        <div class="rubik-glitch-pop-regular"><h1><b class="rubik-glitch-pop-regular">EtherLeaks<b></h1></div>
         <div class="style-text"><p><b>Test Text</p></p></div>
         <div class="about" align="center"></div>
     </div>
@@ -116,29 +108,24 @@
             drops[x] = 1;
 
         function draw() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
-    ctx.fillRect(0, 0, c.width, c.height);
+            ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
+            ctx.fillRect(0, 0, c.width, c.height);
 
-    ctx.shadowColor = 'black';
-    ctx.shadowBlur = 10;
-    ctx.shadowOffsetX = 0;
-    ctx.shadowOffsetY = 0;
+            ctx.fillStyle = "#f4427d";
+            ctx.font = font_size + "px arial";
 
-    ctx.fillStyle = "#f4427d";
-    ctx.font = font_size + "px arial";
+            for (var i = 0; i < drops.length; i++) {
+                var text = matrix[Math.floor(Math.random() * matrix.length)];
+                ctx.fillText(text, i * font_size, drops[i] * font_size);
 
-    for (var i = 0; i < drops.length; i++) {
-        var text = matrix[Math.floor(Math.random() * matrix.length)];
-        ctx.fillText(text, i * font_size, drops[i] * font_size);
+                if (drops[i] * font_size > c.height && Math.random() > 0.975)
+                    drops[i] = 0;
 
-        if (drops[i] * font_size > c.height && Math.random() > 0.975)
-            drops[i] = 0;
+                drops[i]++;
+            }
+        }
 
-        drops[i]++;
-    }
-}
-
-	setInterval(draw, 35);
+        setInterval(draw, 35);
     </script>
 </body>
 </html>
