@@ -1,132 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>║▌║█║▌│║▌║▌█║║▌</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?	family=Rubik+Glitch+Pop&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background: #ecf0f3;
-        }
-        .wrapper {
-            position: relative;
-            width: 350px;
-            padding: 30px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            background: rgba(195, 56, 56, 0.2); /* This makes the background semi-transparent */
-            backdrop-filter: blur(2px); /* This applies the blur */
-        }
-        .wrapper .img-area {
-            height: 150px;
-            width: 150px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .img-area .inner-area {
-            height: calc(100% - 25px);
-            width: calc(100% - 25px);
-            border-radius: 50%;
-        }
-        .inner-area img {
-            height: 100%;
-            width: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        .wrapper .name {
-            font-size: 23px;
-            font-weight: 500;
-            color: red;
-            margin: 10px 0 5px 0;
-        }
-        .wrapper .about {
-            color: black;
-            font-weight: 400;
-            font-size: 14px;
-        }
-        /* Matrix animation styles */
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-		.rubik-glitch-pop-regular {
-  			font-family: "Rubik Glitch Pop", system-ui;
-  			font-weight: 400;
-  			font-style: normal;
-        }
-    </style>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>║▌║█║▌│║▌║▌█║║▌</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?  family=Rubik+Glitch+Pop&display=swap" rel="stylesheet">
+   <style>
+       * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+           font-family: 'Poppins', sans-serif;
+       }
+       body {
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           min-height: 100vh;
+           background: #ecf0f3;
+       }
+       .wrapper {
+           position: relative;
+           width: 350px;
+           padding: 30px;
+           border-radius: 10px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           flex-direction: column;
+           background: rgba(195, 56, 56, 0.2); /* This makes the background semi-transparent */
+           backdrop-filter: blur(2px); /* This applies the blur */
+       }
+       .wrapper .img-area {
+           height: 150px;
+           width: 150px;
+           border-radius: 50%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+       }
+       .img-area .inner-area {
+           height: calc(100% - 25px);
+           width: calc(100% - 25px);
+           border-radius: 50%;
+       }
+       .inner-area img {
+           height: 100%;
+           width: 100%;
+           border-radius: 50%;
+           object-fit: cover;
+       }
+       .wrapper .name {
+           font-size: 23px;
+           font-weight: 500;
+           color: black; /* Was Red */
+           margin: 10px 0 5px 0;
+       }
+       .wrapper .about {
+           color: black;
+           font-weight: 400;
+           font-size: 14px;
+       }
+       /* Matrix animation styles */
+       canvas {
+           position: fixed;
+           top: 0;
+           left: 0;
+           z-index: -1;
+       }
+       .rubik-glitch-pop-regular {
+           font-family: "Rubik Glitch Pop", system-ui;
+           font-weight: 400;
+           font-style: normal;
+       }
+   </style>
 </head>
 <body>
-    <canvas id="c"></canvas>
-    <div class="wrapper">
-        <div class="img-area">
-            <div class="inner-area">
-                <img src="https://Etherleaks.github.io/main/img/a-ethereum.png">
-            </div>
-        </div>
-        <div class="rubik-glitch-pop-regular"><h1><b class="rubik-glitch-pop-regular">EtherLeaks<b></h1></div>
-        <div class="style-text"><p><b>Test Text</p></p></div>
-        <div class="about" align="center"></div>
-    </div>
-    <script>
-        // Matrix animation script
-        var c = document.getElementById("c");
-        var ctx = c.getContext("2d");
+   <canvas id="c"></canvas>
+   <div class="wrapper">
+       <div class="img-area">
+           <div class="inner-area">
+               <img src="https://Etherleaks.github.io/main/img/a-ethereum.png">
+           </div>
+       </div>
+       <div class="rubik-glitch-pop-regular"><h1><b class="rubik-glitch-pop-regular">EtherLeaks<b></h1></div>
+       <div class="style-text"><p><b>Test Text</p></p></div>
+       <div class="about" align="center"></div>
+   </div>
+   <script>
+       // Matrix animation script
+       //Auther Aiden Erickson
+       var c = document.getElementById("c");
+       var ctx = c.getContext("2d");
 
-        c.height = window.innerHeight;
-        c.width = window.innerWidth;
 
-        var matrix = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ123456789@#$%^&*()*&^%+-/~{[|`]}ηχτξΔδ";
-        matrix = matrix.split("");
+       c.height = window.innerHeight;
+       c.width = window.innerWidth;
 
-        var font_size = 10;
-        var columns = c.width / font_size;
-        var drops = [];
 
-        for (var x = 0; x < columns; x++)
-            drops[x] = 1;
+       var matrix = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ123456789@#$%^&*()*&^%+-/~{[|`]}ηχτξΔδ";
+       matrix = matrix.split("");
 
-        function draw() {
-            ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
-            ctx.fillRect(0, 0, c.width, c.height);
 
-            ctx.fillStyle = "#f4427d";
-            ctx.font = font_size + "px arial";
+       var font_size = 10;
+       var columns = c.width / font_size;
+       var drops = [];
 
-            for (var i = 0; i < drops.length; i++) {
-                var text = matrix[Math.floor(Math.random() * matrix.length)];
-                ctx.fillText(text, i * font_size, drops[i] * font_size);
 
-                if (drops[i] * font_size > c.height && Math.random() > 0.975)
-                    drops[i] = 0;
+       for (var x = 0; x < columns; x++)
+           drops[x] = 1;
 
-                drops[i]++;
-            }
-        }
 
-        setInterval(draw, 35);
-    </script>
+       function draw() {
+           ctx.fillStyle = "rgba(0, 0, 0, 0.20)";
+           ctx.fillRect(0, 0, c.width, c.height);
+
+
+           ctx.fillStyle = "#f4427d";
+           ctx.font = font_size + "px arial";
+
+
+           for (var i = 0; i < drops.length; i++) {
+               var text = matrix[Math.floor(Math.random() * matrix.length)];
+               ctx.fillText(text, i * font_size, drops[i] * font_size);
+
+
+               if (drops[i] * font_size > c.height && Math.random() > 0.975)
+                   drops[i] = 0;
+
+
+               drops[i]++;
+           }
+       }
+
+
+       setInterval(draw, 35);
+   </script>
 </body>
 </html>
 
