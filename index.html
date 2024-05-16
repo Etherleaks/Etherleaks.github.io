@@ -19,14 +19,14 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            background: #ecf0f3;
+            background: black;
         }
         .wrapper,
         .wrapper .img-area,
         .social-icons a,
         .buttons button {
-            box-shadow: -3px -3px 7px #2d2c2c,
-                        3px 3px 5px #161616;
+            box-shadow: -3px -3px 7px #821111,
+                        3px 3px 5px #3f0a0a;
         }
         .wrapper {
             position: relative;
@@ -94,6 +94,7 @@
             </div>
         </div>
         <div class="rubik-glitch-regular"><h1 class="rubik-glitch-regular">EtherLeaks</h1></div>
+        <div class="style-text"><p><b>Test Text</p></p></div>
         <div class="about" align="center"></div>
     </div>
     <script>
@@ -115,24 +116,29 @@
             drops[x] = 1;
 
         function draw() {
-            ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
-            ctx.fillRect(0, 0, c.width, c.height);
+    ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
+    ctx.fillRect(0, 0, c.width, c.height);
 
-            ctx.fillStyle = "#f4427d";
-            ctx.font = font_size + "px arial";
+    ctx.shadowColor = 'black';
+    ctx.shadowBlur = 10;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
 
-            for (var i = 0; i < drops.length; i++) {
-                var text = matrix[Math.floor(Math.random() * matrix.length)];
-                ctx.fillText(text, i * font_size, drops[i] * font_size);
+    ctx.fillStyle = "#f4427d";
+    ctx.font = font_size + "px arial";
 
-                if (drops[i] * font_size > c.height && Math.random() > 0.975)
-                    drops[i] = 0;
+    for (var i = 0; i < drops.length; i++) {
+        var text = matrix[Math.floor(Math.random() * matrix.length)];
+        ctx.fillText(text, i * font_size, drops[i] * font_size);
 
-                drops[i]++;
-            }
-        }
+        if (drops[i] * font_size > c.height && Math.random() > 0.975)
+            drops[i] = 0;
 
-        setInterval(draw, 35);
+        drops[i]++;
+    }
+}
+
+	setInterval(draw, 35);
     </script>
 </body>
 </html>
