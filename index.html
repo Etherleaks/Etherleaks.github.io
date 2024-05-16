@@ -5,70 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>║▌║█║▌│║▌║▌█║║▌</title>
     <style>
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-body{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: #ecf0f3;
-}
-.wrapper,
-.wrapper .img-area,
-.social-icons a,
-.buttons button{
-  background: #ecf0f3;
-  box-shadow: -3px -3px 7px #ffffff,
-               3px 3px 5px #ceced1;
-}
-.wrapper{
-  position: relative;
-  width: 350px;
-  padding: 30px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.wrapper .img-area{
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.img-area .inner-area{
-  height: calc(100% - 25px);
-  width: calc(100% - 25px);
-  border-radius: 50%;
-}
-.inner-area img{
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-}
-.wrapper .name{
-  font-size: 23px;
-  font-weight: 500;
-  color: #31344b;
-  margin: 10px 0 5px 0;
-}
-.wrapper .about{
-  color: #44476a;
-  font-weight: 400;
-  font-size: 14px;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #ecf0f3;
+        }
+        .wrapper,
+        .wrapper .img-area,
+        .social-icons a,
+        .buttons button {
+            box-shadow:
+        }
+        .wrapper {
+            position: relative;
+            width: 350px;
+            padding: 30px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: rgba(255, 255, 255, 0.5); /* This makes the background semi-transparent */
+            backdrop-filter: blur(2px); /* This applies the blur */
+        }
+        .wrapper .img-area {
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .img-area .inner-area {
+            height: calc(100% - 25px);
+            width: calc(100% - 25px);
+            border-radius: 50%;
+        }
+        .inner-area img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .wrapper .name {
+            font-size: 23px;
+            font-weight: 500;
+            color: #31344b;
+            margin: 10px 0 5px 0;
+        }
+        .wrapper .about {
+            color: #44476a;
+            font-weight: 400;
+            font-size: 14px;
+        }
+        /* Matrix animation styles */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
     </style>
 </head>
 <body>
+    <canvas id="c"></canvas>
     <div class="wrapper">
         <div class="img-area">
             <div class="inner-area">
@@ -78,5 +86,45 @@ body{
         <div class="name">EtherLeaks</div>
         <div class="about" align="center">My Ethereum Wallet<br /><b>0xD117141Abfc21eF3eeDA<br />e139aBf3D598eD2c2252</b></div>
     </div>
+    <script>
+        // Matrix animation script
+        var c = document.getElementById("c");
+        var ctx = c.getContext("2d");
+
+        c.height = window.innerHeight;
+        c.width = window.innerWidth;
+
+        var matrix = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+        matrix = matrix.split("");
+
+        var font_size = 10;
+        var columns = c.width / font_size;
+        var drops = [];
+
+        for (var x = 0; x < columns; x++)
+            drops[x] = 1;
+
+        function draw() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
+            ctx.fillRect(0, 0, c.width, c.height);
+
+            ctx.fillStyle = "#f4427d";
+            ctx.font = font_size + "px arial";
+
+            for (var i = 0; i < drops.length; i++) {
+                var text = matrix[Math.floor(Math.random() * matrix.length)];
+                ctx.fillText(text, i * font_size, drops[i] * font_size);
+
+                if (drops[i] * font_size > c.height && Math.random() > 0.975)
+                    drops[i] = 0;
+
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 35);
+    </script>
 </body>
 </html>
+
+
