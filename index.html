@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>║▌║█║▌│║▌║▌█║║▌</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -22,7 +25,8 @@
         .wrapper .img-area,
         .social-icons a,
         .buttons button {
-            box-shadow:
+            box-shadow: -3px -3px 7px #2d2c2c,
+                        3px 3px 5px #161616;
         }
         .wrapper {
             position: relative;
@@ -33,7 +37,7 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            background: rgba(255, 255, 255, 0.5); /* This makes the background semi-transparent */
+            background: rgba(195, 56, 56, 0.2); /* This makes the background semi-transparent */
             backdrop-filter: blur(2px); /* This applies the blur */
         }
         .wrapper .img-area {
@@ -58,11 +62,11 @@
         .wrapper .name {
             font-size: 23px;
             font-weight: 500;
-            color: #31344b;
+            color: red;
             margin: 10px 0 5px 0;
         }
         .wrapper .about {
-            color: #44476a;
+            color: black;
             font-weight: 400;
             font-size: 14px;
         }
@@ -72,6 +76,12 @@
             top: 0;
             left: 0;
             z-index: -1;
+        }
+        .rubik-glitch-regular {
+          font-family: "Rubik Glitch", system-ui;
+          font-weight: 400;
+          font-style: normal;
+          font-style: italic;
         }
     </style>
 </head>
@@ -83,8 +93,8 @@
                 <img src="https://Etherleaks.github.io/main/img/a-ethereum.png">
             </div>
         </div>
-        <div class="name">EtherLeaks</div>
-        <div class="about" align="center">My Ethereum Wallet<br /><b>0xD117141Abfc21eF3eeDA<br />e139aBf3D598eD2c2252</b></div>
+        <div class="rubik-glitch-regular"><h1 class="rubik-glitch-regular">EtherLeaks</h1></div>
+        <div class="about" align="center"></div>
     </div>
     <script>
         // Matrix animation script
@@ -94,7 +104,7 @@
         c.height = window.innerHeight;
         c.width = window.innerWidth;
 
-        var matrix = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+        var matrix = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ123456789@#$%^&*()*&^%+-/~{[|`]}ηχτξΔδ";
         matrix = matrix.split("");
 
         var font_size = 10;
@@ -126,5 +136,4 @@
     </script>
 </body>
 </html>
-
 
