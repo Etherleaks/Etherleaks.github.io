@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta sharset="UTF-8"
+        <title>Number Generator</title>
+    </head>
+    <body>
+        <button type="button" onclick="clickGenNum()">Generate!</button>
+        <p id="number"></p>
+
+        <script>
+            function clickGenNum() {
+            // Generates numbers 1 - 100 to use later
+                const minNum = 1;
+                const maxNum = 100;
+                const numVal = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+
+            // Changes/Updates the number in the given id from tag <p>
+                document.getElementById('number').textContent = `Here you go! ${numVal}`;
+            }
+        </script>
+    </body>
+</html>
